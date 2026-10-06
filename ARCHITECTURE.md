@@ -174,6 +174,7 @@ The development machine for this repository has **no Docker**. So that automated
 | PostgreSQL 18.3 (WASM, in-process) | `@electric-sql/pglite` 0.5.8 | Queries, transactions, **row-level security**, **exclusion constraints** (`btree_gist`), `pg_trgm`, **pgvector** (`@electric-sql/pglite-pgvector`), **PostGIS** (`@electric-sql/pglite-postgis`) |
 | PostgreSQL over the wire protocol | `@electric-sql/pglite-socket` 0.2.11 | Standard `pg` driver connects with a normal `postgres://` URL, including transactions |
 | PostgreSQL 18.4 (native server) | `embedded-postgres` 18.4.0-beta.17 | Real multi-connection server. A five-client concurrent claim race produced exactly one winner. |
+| MongoDB 8.2.6 (native `mongod`) | `mongodb-memory-server` | Single-node replica set with a committed multi-document transaction. The first run downloads an ~800 MB archive on Windows, so all projects share one cache via `MONGOMS_DOWNLOAD_DIR` (documented in each MongoDB project's README). |
 
 **Rules for choosing an engine in tests:**
 - **PGlite** is the default for Postgres integration tests: fast and isolated per test file.
